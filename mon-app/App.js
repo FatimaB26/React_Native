@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, Button, Alert, ActivityIndicator } from 'react-native';
 
 class App extends React.Component {
   
@@ -18,6 +18,21 @@ class App extends React.Component {
         <Image 
         style= {styles.logo}
         source={{ uri: 'https://www.konexio.eu/uploads/1/2/0/2/120245745/konexio-logo_1.png' }} />
+        <Button
+        title="Bouton"
+        style = {styles.button}
+        onPress={() => Alert.alert('Bouton cliqué')}
+        />
+        <Text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+          mollit anim id est laborum. 
+          <ActivityIndicator style = {styles.activityIndicator} />
+          </Text>
+
       </ScrollView>
     )
   }
@@ -52,7 +67,20 @@ const styles = StyleSheet.create({
     height: 200,
     width: 200,
     resizeMode: 'contain'
-  }
+  },
+
+  button: {
+    backgroundColor: 'red',
+    width: 100,
+    alignItems: 'center',
+ },
+
+ activityIndicator: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: 80
+}
 
 });
 
